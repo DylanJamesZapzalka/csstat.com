@@ -11,6 +11,8 @@ import { AddGraphComponent } from './add-graph/add-graph.component';
 import { CalculationsComponent } from './calculations/calculations.component';
 import { GraphDetailComponent } from './graph-detail/graph-detail.component';
 
+import { GoogleChartsModule } from 'angular-google-charts';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { GraphDetailComponent } from './graph-detail/graph-detail.component';
 
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
