@@ -1,8 +1,12 @@
-<google-chart #chart
-   [title]="title"
-   [type]="type"
-   [data]="data"
-   [options]="options"
-   [width]="width"
-   [height]="height">
-</google-chart>
+<ul>
+   <li *ngFor="let graph of graphs">
+      <google-chart
+         [title]="graph.title"
+         [type]="graph.type "
+         [data]="graph.data"
+         [options]="graph.options"
+         [width]="graph.width"
+         [height]="graph.height">
+      </google-chart>
+    </li>
+</ul>
