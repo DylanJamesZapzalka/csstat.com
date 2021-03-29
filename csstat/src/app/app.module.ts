@@ -7,6 +7,9 @@ import { InputComponent } from './input/input.component';
 import { InputInsertComponent } from './input-insert/input-insert.component';
 import { InputUploadComponent } from './input-upload/input-upload.component';
 import { GraphsComponent } from './graphs/graphs.component';
+import { AddGraphComponent } from './add-graph/add-graph.component';
+import { CalculationsComponent } from './calculations/calculations.component';
+import { GraphDetailComponent } from './graph-detail/graph-detail.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { GraphsComponent } from './graphs/graphs.component';
     InputComponent,
     InputInsertComponent,
     InputUploadComponent,
-    GraphsComponent
+    GraphsComponent,
+    AddGraphComponent,
+    CalculationsComponent,
+    GraphDetailComponent
 
   ],
   imports: [
