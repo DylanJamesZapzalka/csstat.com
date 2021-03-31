@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddGraphComponent implements OnInit {
 
-  constructor() { }
+  chartName: string;
+  chartType: string;
+  data: any;
+  errors: string;
+  
+  clickCreate(chartName: string){
+    this.errors = chartName;
+  }
 
   ngOnInit(): void {
   }
 
+  constructor() { }
 }
