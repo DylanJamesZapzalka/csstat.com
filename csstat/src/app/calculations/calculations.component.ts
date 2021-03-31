@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class CalculationsComponent implements OnInit {
   //calculations: string[] = [];
   results: number[] = [12, 123, 22, 5.78, 12, 123, 22, 5.78];
-  calculations: {[key: string]: number}={"mean": 1, "median": 4, "mode": 2.3,"standard deviation": 4, "variance": 0,"p-value": 6,"correlation between parameters": 8, "percentile of point": 0};
-  calculationsChecked: {[key: string]: boolean}={"mean": false, "median": true, "mode": true,"standard deviation": true, "variance": true,"p-value": true,"correlation between parameters": true, "percentile of point": true};
+  calculations: {[key: string]: number}={"mean": this.results[0], "median": this.results[1], "mode": this.results[2],"standard deviation": this.results[3], "variance": this.results[4],"p-value": this.results[5],"correlation between parameters": this.results[6], "percentile of point": this.results[7]};
+  calculationsChecked: {[key: string]: boolean}={"mean": true, "median": true, "mode": true,"standard deviation": true, "variance": true,"p-value": true,"correlation between parameters": true, "percentile of point": true};
   constructor() { }
 
   ngOnInit(): void {
