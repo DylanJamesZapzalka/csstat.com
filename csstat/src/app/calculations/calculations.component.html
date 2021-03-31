@@ -1,22 +1,32 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
+      <br>
+      <br>
       <h3>Calculations to perform</h3>
       <ul>
-        <li *ngFor="let c in calculations">
+        <li *ngFor="let c of calculations | keyvalue">
           <div  class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
-              {{c}}
+            <input class="form-check-input" type="checkbox" [(ngModel)]="isChecked" value="" id="calcCheck{{c.key}}" [checked]="calculationsChecked[c.key]"  (change)="checkChange(c.key)" >
+            <label class="form-check-label" for="calcCheck">
+              {{c.key}}
             </label>
-        </div>
+          </div>
         </li>
+
       </ul>
 
     </div>
     <div class="col-md-6">
       <button id="copyResults" type="button" class="btn btn-outline-primary">Copy Results</button>
       <h3>Results</h3>
+      <ul>
+        <li *ngFor="let c of calculations | keyvalue">
+          <div *ngIf="calculationsChecked[c.key]">
+            {{c.key}}= {{c.value}}
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
