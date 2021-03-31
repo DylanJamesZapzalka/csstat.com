@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <br>
-      <br>
+
       <h3>Calculations to perform</h3>
       <ul>
         <li *ngFor="let c of calculations | keyvalue">
@@ -18,8 +17,8 @@
 
     </div>
     <div class="col-md-6">
-      <button id="copyResults" type="button" class="btn btn-outline-primary">Copy Results</button>
-      <h3>Results</h3>
+
+      <h3>Results <button id="copyResults" type="button" class="btn  btn-sm btn-outline-primary">Copy Results</button> </h3>
       <ul>
         <li *ngFor="let c of calculations | keyvalue">
           <div *ngIf="calculationsChecked[c.key]">
