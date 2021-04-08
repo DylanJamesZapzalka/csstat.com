@@ -32,8 +32,8 @@ export class GraphService {
   }
 
   addGraph(title: string, type: string, data: any): void {
-    this.graphs.push({"title": "Default Example Chart",
-    "type": "PieChart", 
+    this.graphs.push({"title": title,
+    "type": type, 
     "data": [
       ['Firefox', 45.0],
       ['IE', 26.8],

@@ -9,7 +9,6 @@ import { InputUploadComponent } from './input-upload/input-upload.component';
 import { GraphsComponent } from './graphs/graphs.component';
 import { AddGraphComponent } from './add-graph/add-graph.component';
 import { CalculationsComponent } from './calculations/calculations.component';
-import { GraphDetailComponent } from './graph-detail/graph-detail.component';
 
 import { GoogleChartsModule } from 'angular-google-charts';
 import { FormsModule } from '@angular/forms';
@@ -25,8 +24,6 @@ import { FormsModule } from '@angular/forms';
     GraphsComponent,
     AddGraphComponent,
     CalculationsComponent,
-    GraphDetailComponent
-
   ],
   imports: [
     BrowserModule,
