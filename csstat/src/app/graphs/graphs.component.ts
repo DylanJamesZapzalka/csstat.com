@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Graph } from '../graph';
+import { GraphService } from '../graph.service';
 
 @Component({
   selector: 'app-graphs',
@@ -8,40 +9,16 @@ import { Graph } from '../graph';
 })
 export class GraphsComponent implements OnInit {
 
-  graphs: Graph[] = [
-    {"title": "Default Example Chart",
-    "type": "PieChart", 
-    "data": [
-      ['Firefox', 45.0],
-      ['IE', 26.8],
-      ['Chrome', 12.8],
-      ['Safari', 8.5],
-      ['Opera', 6.2],
-      ['Others', 0.7] ],
-      "columnNames": ['Browser', 'Percentage'],
-      "options": {is3D: true},
-      "width": 550,
-      "height": 400
-    },
-    {"title": "Default Example Chart",
-    "type": "Histogram", 
-    "data": [
-      ['Firefox', 45.0],
-      ['IE', 26.8],
-      ['Chrome', 12.8],
-      ['Safari', 8.5],
-      ['Opera', 6.2],
-      ['Others', 0.7] ],
-      "columnNames": ['Browser', 'Percentage'],
-      "options": {is3D: true},
-      "width": 550,
-      "height": 400
-    }
-  ];
+  constructor(private graphService: GraphService) { }
 
-  constructor() { }
+  graphs: Graph[] = this.graphService.graphs;
+
+  
 
   ngOnInit(): void {
+
   }
+
+  
 
 }

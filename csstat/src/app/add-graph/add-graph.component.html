@@ -10,39 +10,33 @@
         <legend class="col-form-label col-sm-2 pt-0">Chart Type</legend>
         <div class="col-sm-10">
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="gridRadios" id="scatterRadio" value="option1">
+            <input class="form-check-input" [(ngModel)]='result' value="ScatterChart" type="radio" name="gridRadios" id="scatterRadio" checked>
             <label class="form-check-label" for="scatterRadio">
               Scatter Chart
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="gridRadios" id="lineRadio" value="option2">
+            <input class="form-check-input" [(ngModel)]='result' value="LineChart" type="radio" name="gridRadios" id="lineRadio">
             <label class="form-check-label" for="lineRadio">
               Line Chart
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="gridRadios" id="barRadio" value="option2">
+            <input class="form-check-input" [(ngModel)]='result' value="BarChart" type="radio" name="gridRadios" id="barRadio">
             <label class="form-check-label" for="barRadio">
               Bar Chart
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="gridRadios" id="histogramRadio" value="option2">
+            <input class="form-check-input" [(ngModel)]='result' value="Histogram" type="radio" name="gridRadios" id="histogramRadio">
             <label class="form-check-label" for="histogramRadio">
               Histogram
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="gridRadios" id="piechartRadio" value="option2">
+            <input class="form-check-input" [(ngModel)]='result' value="PieChart" type="radio" name="gridRadios" id="pieChartRadio">
             <label class="form-check-label" for="piechartRadio">
               Pie Chart
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="gridRadios" id="piechart3DRadio" value="option2" checked>
-            <label class="form-check-label" for="piechart3DRadio">
-              Pie Chart 3D
             </label>
           </div>
         </div>
@@ -53,7 +47,9 @@
             Errors: {{errors}}
         </div>
       <div class="col-sm-3">
-        <button type="submit" class="btn btn-primary" (click)="clickCreate(inputChartName.value)">Create Graph</button>
+        <button type="button" class="btn btn-primary" (click)="clickCreate(inputChartName.value, result)">Create Graph</button>
       </div>
     </div>
   </form>
+  ChartName: {{title}}
+  ChartType: {{type}}
