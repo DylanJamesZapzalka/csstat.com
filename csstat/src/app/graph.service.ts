@@ -34,13 +34,7 @@ export class GraphService {
   addGraph(title: string, type: string, data: any): void {
     this.graphs.push({"title": title,
     "type": type, 
-    "data": [
-      ['Firefox', 45.0],
-      ['IE', 26.8],
-      ['Chrome', 12.8],
-      ['Safari', 8.5],
-      ['Opera', 6.2],
-      ['Others', 0.7] ],
+    "data": data,
       "columnNames": ['Browser', 'Percentage'],
       "options": {},
       "width": 550,

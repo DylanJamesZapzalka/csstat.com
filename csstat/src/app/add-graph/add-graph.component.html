@@ -42,14 +42,26 @@
         </div>
       </div>
     </fieldset>
+
     <div class="form-group row">
-        <div class="col-sm-9">
-            Errors: {{errors}}
+        <div class="col-sm-6">
+          <label for="data1">Example textarea</label>
+          <textarea class="form-control" id="data1" rows="3" #data1 placeholder="'Firefox','IE','Chrome','Safari','Opera','Others'"></textarea>
         </div>
+
+        <div class="col-sm-6">
+          <label for="data2">Example textarea</label>
+          <textarea class="form-control" id="data2" rows="3" #data2 placeholder="45.0,26.8,12.8,8.5,6.2,0.7"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group row">
       <div class="col-sm-3">
-        <button type="button" class="btn btn-primary" (click)="clickCreate(inputChartName.value, result)">Create Graph</button>
+        <button type="button" class="btn btn-primary" (click)="clickCreate(inputChartName.value, result, data1.value, data2.value)">Create Graph</button>
       </div>
     </div>
+
+
+
+    
   </form>
-  ChartName: {{title}}
-  ChartType: {{type}}

@@ -16,18 +16,25 @@ export class AddGraphComponent implements OnInit {
 
   result: string;
   errors: string;
+
+  array1: any;
+  array2: any;
   
-  clickCreate(chartName: string, chartType: string): void{
+  clickCreate(chartName: string, chartType: string, data1: string, data2: string): void{
     this.title = chartName;
     this.type =  chartType;
-    this.data = [
-      ['Firefox', 45.0],
-      ['IE', 26.8],
-      ['Chrome', 12.8],
-      ['Safari', 8.5],
-      ['Opera', 6.2],
-      ['Others', 0.7] ]
+
+    this.array1 = data1.split(',');
+    this.array2 = data2.split(',');
+
+    this.data = [];
     
+    for(let i = 0; i < this.array1.length; i++)
+    {
+      this.array2[i] = Number(this.array2[i]);
+      this.data.push([this.array1[i], this.array2[i]]);
+    }
+
     this.graphService.addGraph(this.title, this.type, this.data);
   }
 
