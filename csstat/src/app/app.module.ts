@@ -12,6 +12,7 @@ import { CalculationsComponent } from './calculations/calculations.component';
 
 import { GoogleChartsModule } from 'angular-google-charts';
 import { FormsModule } from '@angular/forms';
+import { GraphDetailComponent } from './graph-detail/graph-detail.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     GraphsComponent,
     AddGraphComponent,
     CalculationsComponent,
+    GraphDetailComponent,
   ],
   imports: [
     BrowserModule,
