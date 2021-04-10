@@ -1,6 +1,11 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
     <div class="example-box" *ngFor="let graph of graphs" cdkDrag>
       <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
       {{graph.title}}
+      <li class="list-inline-item">
+        <button class="btn" (click)="delete(graph)"><i class="fa fa-trash"></i></button>
+    </li>
     </div>
 </div>

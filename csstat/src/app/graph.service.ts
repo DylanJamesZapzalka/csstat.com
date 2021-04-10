@@ -40,8 +40,14 @@ export class GraphService {
       "width": 550,
       "height": 400
     })
-
   }
+
+  deleteGraph(graph: Graph) {
+    let index = this.graphs.indexOf(graph);
+    this.graphs.splice(index, 1);
+  }
+
+
 
 
 }
