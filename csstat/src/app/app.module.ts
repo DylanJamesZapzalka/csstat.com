@@ -11,6 +11,7 @@ import { CalculationsComponent } from './calculations/calculations.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { FormsModule } from '@angular/forms';
 import { GraphDetailComponent } from './graph-detail/graph-detail.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { GraphDetailComponent } from './graph-detail/graph-detail.component';
     BrowserModule,
     GoogleChartsModule,
     FormsModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

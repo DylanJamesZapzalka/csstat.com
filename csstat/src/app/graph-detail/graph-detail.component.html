@@ -1,1 +1,6 @@
-<p>graph-detail works!</p>
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let graph of graphs" cdkDrag>
+      <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+      {{graph.title}}
+    </div>
+</div>
