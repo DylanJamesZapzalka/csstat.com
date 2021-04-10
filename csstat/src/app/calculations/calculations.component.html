@@ -6,7 +6,7 @@
       <ul>
         <li *ngFor="let c of calculations | keyvalue">
           <div  class="form-check">
-            <input class="form-check-input" type="checkbox" [(ngModel)]="isChecked" value="" id="calcCheck{{c.key}}" [checked]="calculationsChecked[c.key]"  (change)="checkChange(c.key)" >
+            <input class="form-check-input" type="checkbox" value="" id="calcCheck{{c.key}}" [checked]="calculationsChecked[c.key]"  (change)="checkChange(c.key)" >
             <label class="form-check-label" for="calcCheck">
               {{c.key}}
             </label>
