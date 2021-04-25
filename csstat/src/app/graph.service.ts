@@ -7,10 +7,19 @@ import { Graph } from './graph';
 export class GraphService {
 
   constructor() {}
+  input: number[] = [1,2,3,4,5];
+
+  updateInput(data: number[]){
+    this.input = data;
+  }
+
+  getInput(){
+    return this.input;
+  }
 
   graphs: Graph[] = [
     {"title": "Default Example Chart",
-    "type": "PieChart", 
+    "type": "PieChart",
     "data": [
       ['Firefox', 45.0],
       ['IE', 26.8],
@@ -25,7 +34,7 @@ export class GraphService {
     }
   ];
 
-  
+
 
   getGraphs(): Graph[] {
     return this.graphs;
@@ -33,7 +42,7 @@ export class GraphService {
 
   addGraph(title: string, type: string, data: any): void {
     this.graphs.push({"title": title,
-    "type": type, 
+    "type": type,
     "data": data,
       "columnNames": ['Browser', 'Percentage'],
       "options": {},
