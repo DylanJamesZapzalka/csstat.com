@@ -1,44 +1,52 @@
 import { Component, OnInit } from '@angular/core';
-import{InputService} from '../input.service'
 import{GraphService} from '../graph.service'
 import { ngModuleJitUrl } from '@angular/compiler';
 
 @Component({
   selector: 'app-calculations',
   templateUrl: './calculations.component.html',
-  styleUrls: ['./calculations.component.css'],
-  providers: [InputService,GraphService]
+  styleUrls: ['./calculations.component.css']
+  //providers: [GraphService]
 })
 export class CalculationsComponent implements OnInit {
-  constructor(private inputService: GraphService) { }
-  input: number[] = this.inputService.getInput();
+  constructor(private graphService: GraphService) { }
+
+  input: number[] = this.graphService.input;
   sum :number = 0;
-  results: number[] = [0,0,0,0,0];
-  calculations: {[key: string]: number}={"mean": this.results[0], "median": this.results[1], "mode": this.results[2],"standard deviation": this.results[3], "variance": this.results[4]};
+  mean:number=0;
+  median:number=0;
+  mode: number=0;
+  standardDeviation: number=0;
+  variance: number =0;
+
+  calculations: {[key: string]: number}={"mean": 0, "median": 0, "mode": 0,"standard deviation": 0, "variance": 0};
   calculationsChecked: {[key: string]: boolean}={"mean": true, "median": true, "mode": true,"standard deviation": true, "variance": true};
 
 
   ngOnInit(): void {
-    this.input = this.inputService.getInput();
-    this.calculate();
   }
 
   checkChange(s: string){
+    this.ngOnInit();
     if(this.calculationsChecked[s]){
       this.calculationsChecked[s]= false;
     }else{
       this.calculationsChecked[s]= true;
     }
-    this.calculate();
-    this.ngOnInit();
- }
+
+}
 
  calculate(){
+   alert("hi2");
+   //mean
+   this.sum=0;
     for(let n of this.input){
       this.sum+=n;
     }
+    this.calculations["mean"] = this.sum / this.input.length;
+
+    //this.ngOnInit();
 
 
-    this.results[1] = this.sum / this.input.length;
  }
 }

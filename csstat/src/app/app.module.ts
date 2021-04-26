@@ -12,7 +12,8 @@ import { GoogleChartsModule } from 'angular-google-charts';
 import { FormsModule } from '@angular/forms';
 import { GraphDetailComponent } from './graph-detail/graph-detail.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import {InputService} from './input.service'
+import { GraphService } from './graph.service';
+
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import {InputService} from './input.service'
     FormsModule,
     DragDropModule,
   ],
-  providers: [InputService],
+  providers: [GraphService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

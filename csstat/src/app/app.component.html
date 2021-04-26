@@ -3,14 +3,14 @@
   <div class="row">
     <div class="col-md-8">
       <br>
-      <app-input></app-input>
+      <app-input (inputButtonEvent)="calculate()"></app-input>
       <hr>
       <app-calculations></app-calculations>
       <hr>
       <hr class="divider">
       <hr>
       <app-add-graph></app-add-graph>
-      <app-graph-detail></app-graph-detail>
+      <app-graph-detail ></app-graph-detail>
     </div>
     <div class="col-md-4">
       <app-graphs></app-graphs>

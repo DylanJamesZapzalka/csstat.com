@@ -1,19 +1,21 @@
 import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 import{CalculationsComponent} from '../calculations/calculations.component';
-import{InputService} from '../input.service'
+
 import{GraphService} from '../graph.service'
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css'],
-  providers: [InputService, GraphService]
+  styleUrls: ['./input.component.css']
+  //providers: [GraphService]
 })
 export class InputComponent implements OnInit {
   constructor(private inputService: GraphService) { }
+
+  @Output() inputButtonEvent = new EventEmitter<string>();
+
   dataString: string[] = [""];
   data: number[] = [0];
-  //@Output() dataInputEvent = new EventEmitter<number[]>();
 
 
   ngOnInit(): void {
@@ -29,6 +31,10 @@ export class InputComponent implements OnInit {
     //this.dataInputEvent.emit(this.data);
     this.inputService.updateInput(this.data);
 
+    //reset the data for the next run
+    this.data = [0];
+
+    this.inputButtonEvent.emit("hi");
   }
 
 }

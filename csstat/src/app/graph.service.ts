@@ -7,15 +7,9 @@ import { Graph } from './graph';
 export class GraphService {
 
   constructor() {}
-  input: number[] = [1,2,3,4,5];
+  input: number[] = [0];
 
-  updateInput(data: number[]){
-    this.input = data;
-  }
 
-  getInput(){
-    return this.input;
-  }
 
   graphs: Graph[] = [
     {"title": "Default Example Chart",
@@ -56,7 +50,17 @@ export class GraphService {
     this.graphs.splice(index, 1);
   }
 
+  updateInput(data: number[]){
+    for(let i =0; i<data.length; i++){
+      this.input[i]=data[i];
+    }
+    alert(this.input);
 
+  }
+
+  getInput(){
+    return this.input;
+  }
 
 
 }
