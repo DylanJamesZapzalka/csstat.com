@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {ClipboardModule} from "@angular/cdk/clipboard";
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -31,6 +32,7 @@ import { GraphService } from './graph.service';
     GoogleChartsModule,
     FormsModule,
     DragDropModule,
+    ClipboardModule,
   ],
   providers: [GraphService],
   bootstrap: [AppComponent]
