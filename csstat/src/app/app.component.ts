@@ -11,6 +11,8 @@ import { CalculationsComponent } from './calculations/calculations.component';
 })
 export class AppComponent {
   title = 'csstat';
+  showGraphs: boolean = false;
+  showCalculations: boolean = true;
   constructor(){}
 
   @ViewChild(CalculationsComponent) child:CalculationsComponent;
@@ -18,8 +20,18 @@ export class AppComponent {
   calculate(){
     alert("hi1");
     this.child.calculate();
-
-
+  }
+  toggleCalculations(){
+    if(!this.showCalculations){
+      this.showCalculations = true;
+      this.showGraphs=false;
+    }
+  }
+  toggleGraphs(){
+    if(!this.showGraphs){
+      this.showGraphs = true;
+      this.showCalculations = false;
+    }
   }
 
 }

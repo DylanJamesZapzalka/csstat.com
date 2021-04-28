@@ -1,19 +1,18 @@
-<app-navbar></app-navbar>
+<app-navbar (toggleGraphsEvent)="toggleGraphs()" (toggleCalculationsEvent)="toggleCalculations()"></app-navbar>
 <div class="container">
   <div class="row">
     <div class="col-md-8">
       <br>
-      <app-input (inputButtonEvent)="calculate()"></app-input>
+      <app-input  (inputButtonEvent)="calculate()" *ngIf="showCalculations"></app-input>
       <hr>
-      <app-calculations></app-calculations>
+      <app-calculations *ngIf="showCalculations"></app-calculations>
       <hr>
-      <hr class="divider">
-      <hr>
-      <app-add-graph></app-add-graph>
-      <app-graph-detail ></app-graph-detail>
+      <app-add-graph *ngIf="showGraphs"></app-add-graph>
+      <app-graph-detail *ngIf="showGraphs"></app-graph-detail>
     </div>
     <div class="col-md-4">
-      <app-graphs></app-graphs>
+      <app-graphs *ngIf="showGraphs"></app-graphs>
     </div>
-  </div>
-</div>
+    </div>
+    </div>
+
