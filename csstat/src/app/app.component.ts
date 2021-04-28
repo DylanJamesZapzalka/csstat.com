@@ -18,7 +18,6 @@ export class AppComponent {
   @ViewChild(CalculationsComponent) child:CalculationsComponent;
 
   calculate(){
-    alert("hi1");
     this.child.calculate();
   }
   toggleCalculations(){
