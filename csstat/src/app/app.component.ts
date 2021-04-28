@@ -11,8 +11,8 @@ import { CalculationsComponent } from './calculations/calculations.component';
 })
 export class AppComponent {
   title = 'csstat';
-  showGraphs: boolean = false;
-  showCalculations: boolean = true;
+  showGraphs: boolean = true;
+  showCalculations: boolean = false;
   constructor(){}
 
   @ViewChild(CalculationsComponent) child:CalculationsComponent;

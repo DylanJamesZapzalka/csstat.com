@@ -8,8 +8,9 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 export class NavbarComponent implements OnInit {
   @Output() toggleGraphsEvent = new EventEmitter<string>();
   @Output() toggleCalculationsEvent = new EventEmitter<string>();
-  graphActive: string = "";
-  calcActive: string = "active";
+  
+  graphActive: string = "active";
+  calcActive: string = "";
   constructor() { }
 
 
