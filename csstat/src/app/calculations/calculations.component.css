@@ -1,4 +1,11 @@
 ul li {
   list-style-type: none;
 }
+.inline{
+  display: inline-flex;
+}
+select{
+  margin-left: 5px;
+  margin-right: 5px;
+}
 

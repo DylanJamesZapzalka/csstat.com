@@ -54,7 +54,7 @@ export class GraphService {
     for(let i =0; i<data.length; i++){
       this.input[i]=data[i];
     }
-    alert(this.input);
+
 
   }
 
