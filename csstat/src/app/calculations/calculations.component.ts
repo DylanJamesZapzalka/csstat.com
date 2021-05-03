@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ClipboardModule} from "@angular/cdk/clipboard";
 import{GraphService} from '../graph.service'
-import{mean, median, mode, variance, std, sum, min, max, toFixed} from 'mathjs';
+import{mean, median, mode, variance, std, sum, min, max} from 'mathjs';
 
 @Component({
   selector: 'app-calculations',
