@@ -3,7 +3,7 @@
 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
     <div class="example-box" *ngFor="let graph of graphs" cdkDrag>
       <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-      {{graph.title}}
+      <h6>{{graph.title}}</h6>
       <li class="list-inline-item">
         <button class="btn" (click)="delete(graph)"><i class="fa fa-trash"></i></button>
     </li>
