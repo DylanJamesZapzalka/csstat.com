@@ -1,0 +1,12 @@
+img{
+  height:200px;
+  width:150px;
+  padding-right:15px;
+}
+p{
+  height:200px;
+  width:500px;
+}
+.inline{
+  display:inline-flex;
+}
