@@ -1,4 +1,4 @@
-<app-navbar (toggleGraphsEvent)="toggleGraphs()" (toggleCalculationsEvent)="toggleCalculations()"></app-navbar>
+<app-navbar (toggleGraphsEvent)="toggleGraphs()" (toggleCalculationsEvent)="toggleCalculations()" (toggleAboutEvent)="toggleAbout()" ></app-navbar>
 <div class="container">
   <div class="row">
     <div class="col-md-8">
@@ -9,6 +9,7 @@
       <div *ngIf="showCalculations"><hr></div>
       <app-add-graph *ngIf="showGraphs"></app-add-graph>
       <app-graph-detail *ngIf="showGraphs"></app-graph-detail>
+      <app-about *ngIf="showAbout"></app-about>
     </div>
     <div class="col-md-4">
       <app-graphs *ngIf="showGraphs"></app-graphs>

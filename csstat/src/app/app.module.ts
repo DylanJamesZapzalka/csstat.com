@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { GraphDetailComponent } from './graph-detail/graph-detail.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { GraphService } from './graph.service';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -26,6 +27,7 @@ import { GraphService } from './graph.service';
     AddGraphComponent,
     CalculationsComponent,
     GraphDetailComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

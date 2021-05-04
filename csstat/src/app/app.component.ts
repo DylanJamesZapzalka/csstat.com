@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'csstat';
   showGraphs: boolean = true;
   showCalculations: boolean = false;
+  showAbout: boolean = false;
   constructor(){}
 
   @ViewChild(CalculationsComponent) child:CalculationsComponent;
@@ -24,12 +25,21 @@ export class AppComponent {
     if(!this.showCalculations){
       this.showCalculations = true;
       this.showGraphs=false;
+      this.showAbout = false;
     }
   }
   toggleGraphs(){
     if(!this.showGraphs){
       this.showGraphs = true;
       this.showCalculations = false;
+      this.showAbout = false;
+    }
+  }
+  toggleAbout(){
+    if(!this.showAbout){
+      this.showAbout = true;
+      this.showCalculations = false;
+      this.showGraphs=false;
     }
   }
 
