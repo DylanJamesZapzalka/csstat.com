@@ -37,14 +37,27 @@ export class CalculationsComponent implements OnInit {
 
   }
 
-  //this creates a string for the user to copy
-  // copyResults(){
-  //   for(let k in this.calculations){
-  //     if(this.calculationsChecked[k]){
-  //       //this.copyText.concat(k + ": " + this.calculations[k] + "\n");
-  //     }
-  //   }
-  // }
+  //this will update the string to copy the results to the users clipboard
+  copyResults(){
+    this.copyText = "";
+    for(let k in this.calculations){
+      if(this.truncate){
+        if(this.calculationsChecked[k]){
+          this.copyText = this.copyText.concat(k + ": " + this.calculationsTruncated[k] + "\n");
+        }
+      }else{
+          if(this.calculationsChecked[k]){
+            this.copyText = this.copyText.concat(k + ": " + this.calculations[k] + "\n");
+          }
+      }
+
+    }
+
+    //document.getElementById("hiddenCopyText").innerHTML=this.copyText;
+
+
+  }
+
 
  calculate(){
    //mean
@@ -72,6 +85,8 @@ export class CalculationsComponent implements OnInit {
    this.calculationsTruncated["standard deviation"] = Math.round( std(this.input) * this.roundParam)/this.roundParam;
    this.calculationsTruncated["variance"] = Math.round( variance(this.input) * this.roundParam)/this.roundParam;
 
+   //update the results to copy
+   this.copyResults();
   }
 
   toggleTruncate(){

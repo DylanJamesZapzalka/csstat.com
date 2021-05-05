@@ -64,10 +64,11 @@ export class GraphService {
   }
 
   updateInput(data: number[]){
-    for(let i =0; i<data.length; i++){
+    this.input.length=data.length;
+
+     for(let i =0; i<data.length; i++){
       this.input[i]=data[i];
     }
-
 
   }
 
