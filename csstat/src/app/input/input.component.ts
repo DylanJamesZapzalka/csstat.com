@@ -28,7 +28,7 @@ export class InputComponent implements OnInit {
 
     //turn the data into an int array
     for(let i =0; i<this.dataString.length; i++){
-      if ( !Number.isNaN(Number(this.dataString[i])) ){   //check for NaN error
+      if ( (!Number.isNaN(Number(this.dataString[i])) && this.dataString[i]!="") ){   //check for NaN error or blank
         this.data[i] = Number(this.dataString[i]);
       }else{                                              // if NaN, splice the array so a zero isnt included which would mess up the data
         this.nanPositions.push(i);               //remember the positions of the NaN's
