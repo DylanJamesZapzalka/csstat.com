@@ -34,15 +34,28 @@ export class GraphService {
     return this.graphs;
   }
 
-  addGraph(title: string, type: string, data: any): void {
-    this.graphs.push({"title": title,
-    "type": type,
-    "data": data,
-      "columnNames": ['Browser', 'Percentage'],
-      "options": {},
-      "width": 550,
-      "height": 400
-    })
+  addGraph(title: string, type: string, data: any, options: any, columnNames: any): void {
+      if(type == 'PieChart'){
+        this.graphs.push({"title": title,
+        "type": type,
+        "data": data,
+          "columnNames": ['Browser', 'Percentage'],
+          "options": options,
+          "width": 550,
+          "height": 400
+        })
+      }
+      else{
+        this.graphs.push({"title": title,
+        "type": type,
+        "data": data,
+          "columnNames": columnNames,
+          "options": options,
+          "width": 550,
+          "height": 400
+        })
+      }
+
   }
 
   deleteGraph(graph: Graph) {

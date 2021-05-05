@@ -19,6 +19,13 @@ export class AddGraphComponent implements OnInit {
 
   array1: any;
   array2: any;
+
+  options: any;
+
+  is3D: Boolean;
+  columnNames: any;
+  data1Name: string;
+  data2Name: string;
   
   clickCreate(chartName: string, chartType: string, data1: string, data2: string): void{
     this.title = chartName;
@@ -28,15 +35,49 @@ export class AddGraphComponent implements OnInit {
     this.array2 = data2.split(',');
 
     this.data = [];
+    this.columnNames = [];
+
     
-    for(let i = 0; i < this.array1.length; i++)
+
+    if(this.type == "PieChart") {
+        for(let i = 0; i < this.array1.length; i++)
+        {
+          this.array2[i] = Number(this.array2[i]);
+          this.data.push([this.array1[i], this.array2[i]]);
+        }
+        if(this.is3D){
+            this.options = {is3D: true};
+        }
+        else{
+            this.options = {};
+        }
+    }
+    else
     {
-      this.array2[i] = Number(this.array2[i]);
-      this.data.push([this.array1[i], this.array2[i]]);
+
+        this.columnNames = [this.data1Name, this.data2Name];
+        for(let i = 0; i < this.array1.length; i++)
+        {
+          this.array1[i] = Number(this.array1[i]);
+          this.array2[i] = Number(this.array2[i]);
+          this.data.push([this.array1[i], this.array2[i]]);
+        }
     }
 
-    this.graphService.addGraph(this.title, this.type, this.data);
+    this.graphService.addGraph(this.title, this.type, this.data, this.options, this.columnNames);
   }
+
+  change3d(): void {
+      this.is3D = !this.is3D;
+  }
+
+  data1NameChange(data1Name: string): void {
+      this.data1Name = data1Name;
+  }
+
+  data2NameChange(data2Name: string): void {
+    this.data2Name = data2Name;
+}
 
   ngOnInit(): void {
     this.errors = "None";

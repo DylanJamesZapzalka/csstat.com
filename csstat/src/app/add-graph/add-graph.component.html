@@ -57,6 +57,34 @@
         </div>
     </div>
 
+
+
+    <div class="form-group row">
+        <div class="col-sm-12">
+          <label for="data1" #dimension><h5>Extra Options</h5></label>
+          <div class="form-check" *ngIf="result == 'PieChart'">
+            <input class="form-check-input" type="checkbox" value="" id="dimension" (change)="change3d()" [checked]="is3D">
+            <label class="form-check-label" for="flexCheckDefault">
+              3D
+            </label>
+          </div>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <label for="data1Name" class="col-sm-3 col-form-label" *ngIf="result != 'PieChart'"><h6>Dataset 1 Name:</h6></label>
+            <div class="col-sm-7" *ngIf="result != 'PieChart'">
+              <input type="text" class="form-control" #data1Name id="data1Name" placeholder="" (change)="data1NameChange(data1Name.value)">
+            </div>
+            <label for="data2Name" class="col-sm-3 col-form-label" *ngIf="result != 'PieChart'"><h6>Dataset 2 Name:</h6></label>
+            <div class="col-sm-7" *ngIf="result != 'PieChart'">
+              <input type="text" class="form-control" #data2Name id="data2Name" placeholder="" (change)="data2NameChange(data2Name.value)">
+            </div>
+        </div>
+    </div>
+
+
     <div class="form-group row">
       <div class="col-sm-3">
         <button type="button" class="btn btn-lrg btn-primary" (click)="clickCreate(inputChartName.value, result, data1.value, data2.value)">Create Graph</button>
