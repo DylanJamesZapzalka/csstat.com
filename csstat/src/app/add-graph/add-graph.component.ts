@@ -56,12 +56,36 @@ export class AddGraphComponent implements OnInit {
     {
 
         this.columnNames = [this.data1Name, this.data2Name];
-        for(let i = 0; i < this.array1.length; i++)
+        if(Number.isNaN((Number(this.array1[0]))))
         {
-          this.array1[i] = Number(this.array1[i]);
-          this.array2[i] = Number(this.array2[i]);
-          this.data.push([this.array1[i], this.array2[i]]);
+            for(let i = 0; i < this.array1.length; i++)
+            {
+              this.array2[i] = Number(this.array2[i]);
+              this.data.push([this.array1[i], this.array2[i]]);
+            }
         }
+        else
+        {
+
+            for(let i = 0; i < this.array1.length; i++)
+            {
+              this.array1[i] = Number(this.array1[i]);
+              this.array2[i] = Number(this.array2[i]);
+              this.data.push([this.array1[i], this.array2[i]]);
+            }
+        }
+
+        if(this.type == 'BarChart')
+        {
+            this.options = {hAxis: {title: this.data1Name}, vAxis: {title: this.data2Name}}
+        }
+        else if(this.type == 'Histogram'){
+            this.columnNames = ['', ''];
+        }
+        else{
+            this.options = {hAxis: {title: this.data1Name}, vAxis: {title: this.data2Name}};
+        }
+        
     }
 
     this.graphService.addGraph(this.title, this.type, this.data, this.options, this.columnNames);

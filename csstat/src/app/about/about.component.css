@@ -10,3 +10,6 @@ p{
 .inline{
   display:inline-flex;
 }
+.bg-light {
+    background-color: #e5f2fd!important;
+}
